@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    background: url('willow.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+  }
+  
+  .container {
+    margin-top: 20vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 20px;
+    display: inline-block;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  }
+  
+  h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 8px black;
+    margin-bottom: 20px;
+  }
+  
+  p, li, textarea {
+    font-size: 1.2em;
+    line-height: 1.6em;
+  }
+  
+  ul.story-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul.story-list li {
+    margin: 10px 0;
+  }
+  
+  ul.story-list a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  ul.story-list a:hover {
+    text-decoration: underline;
+  }
+  
+  button {
+    margin: 20px;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+  }
+  
+  textarea {
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    resize: vertical;
+  }
+  
