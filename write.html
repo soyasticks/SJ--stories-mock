@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Write Your Story</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .story-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px;
+      border-radius: 10px;
+      margin: 10px 0;
+      color: white;
+      text-align: left;
+    }
+    .story-list {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Write Your Thoughts</h1>
+    <form id="storyForm">
+      <textarea id="storyInput" rows="10" cols="60" placeholder="Start your story here..." required></textarea><br><br>
+      <button type="submit">Submit Story</button>
+    </form>
+
+    <h2>Submitted Stories</h2>
+    <div id="storyList" class="story-list"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById("storyForm");
+    const input = document.getElementById("storyInput");
+    const storyList = document.getElementById("storyList");
+
+    // Load saved stories from localStorage
+    function loadStories() {
+      storyList.innerHTML = '';
+      const stories = JSON.parse(localStorage.getItem("userStories") || "[]");
+      stories.forEach((story, index) => {
+        const div = document.createElement("div");
+        div.className = "story-box";
+        div.innerText = story;
+        storyList.appendChild(div);
+      });
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const newStory = input.value.trim();
+      if (newStory) {
+        const stories = JSON.parse(localStorage.getItem("userStories") || "[]");
+        stories.push(newStory);
+        localStorage.setItem("userStories", JSON.stringify(stories));
+        input.value = '';
+        loadStories();
+      }
+    });
+
+    loadStories(); // Load on page load
+  </script>
+</body>
+</html>
